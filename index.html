@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-prente store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>e-prente store</h1>
+    <p class="tagline">Tu tienda online rápida, simple y confiable</p>
+</header>
+
+<!-- Buscador -->
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Buscar productos...">
+</div>
+
+<!-- Productos -->
+<div class="product-container">
+
+    <div class="product">
+        <img src="https://via.placeholder.com/250" alt="Producto 1">
+        <h2>Producto 1</h2>
+        <p class="price">$20</p>
+        <a class="btn" href="https://wa.me/555555555?text=Hola,%20quiero%20comprar%20el%20Producto%201">Comprar</a>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/250" alt="Producto 2">
+        <h2>Producto 2</h2>
+        <p class="price">$35</p>
+        <a class="btn" href="https://wa.me/555555555?text=Hola,%20quiero%20comprar%20el%20Producto%202">Comprar</a>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/250" alt="Producto 3">
+        <h2>Producto 3</h2>
+        <p class="price">$50</p>
+        <a class="btn" href="https://wa.me/555555555?text=Hola,%20quiero%20comprar%20el%20Producto%203">Comprar</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2025 e-prente store — Todos los derechos reservados</p>
+</footer>
+
+<!-- Buscador funcional -->
+<script>
+    const searchInput = document.getElementById("searchInput");
+    const products = document.querySelectorAll(".product");
+
+    searchInput.addEventListener("keyup", function() {
+        const filter = searchInput.value.toLowerCase();
+
+        products.forEach(product => {
+            const title = product.querySelector("h2").textContent.toLowerCase();
+
+            if (title.includes(filter)) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
